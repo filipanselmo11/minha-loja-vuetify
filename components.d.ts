@@ -12,6 +12,7 @@ declare module 'vue' {
     CompactNavbarComponent: typeof import('./src/components/CompactNavbarComponent.vue')['default']
     FooterComponent: typeof import('./src/components/FooterComponent.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    LoadComponent: typeof import('./src/components/LoadComponent.vue')['default']
     MenuComponent: typeof import('./src/components/MenuComponent.vue')['default']
     NavbarComponent: typeof import('./src/components/NavbarComponent.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

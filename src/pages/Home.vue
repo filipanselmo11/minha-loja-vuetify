@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-
+import { useProdStore } from '@/stores/ProdStore';
+import { useDescStore } from '@/stores/DescStore';
+import { onMounted } from 'vue';
 import MenuComponent from '../components/MenuComponent.vue';
 import CarrosselComponent from '../components/CarrosselComponent.vue';
-import { useProdStore } from '@/stores/ProdStore';
-import { onMounted } from 'vue';
 import CardComponent from '../components/CardComponent.vue';
+import LoadComponent from '../components/LoadComponent.vue';
+
 const friosList = [
   { id: 1, titulo: 'Ave' },
   { id: 2, titulo: 'Charque' },
@@ -52,9 +54,11 @@ const slides = [
 ];
 
 const prodStore = useProdStore();
+const descStore = useDescStore();
 
 onMounted(() => {
   prodStore.getProds();
+  descStore.getDescs();
 });
 
 </script>
@@ -81,7 +85,13 @@ onMounted(() => {
     <span>
       Ofertas da Semana
     </span>
-    <v-row class="mt-2" no-gutters>
+    <div v-if="prodStore.loading">
+      <LoadComponent/>
+    </div>
+    <v-row
+      v-else
+      class="mt-2"
+      no-gutters>
       <v-col
         class="mt-3"
         cols="3"
@@ -94,6 +104,31 @@ onMounted(() => {
             :quantidade="item.quantidade"
           />
       </v-col>
+    </v-row>
+  </section>
+  <section id="descartaveis-embalagens" class="mt-4 text-center">
+    <span>
+      Descartáveis e Embalagens
+    </span>
+    <div v-if="descStore.loading">
+      <LoadComponent/>
+    </div>
+    <v-row
+      v-else
+      class="mt-2"
+      no-gutters>
+        <v-col
+          class="mt-3"
+          cols="3"
+          v-for="(item, id) in descStore.descartaveis"
+          :key="id">
+            <CardComponent
+              :nome="item.nome"
+              :image="item.image"
+              :preco="item.preco"
+              :quantidade="item.quantidade"
+            />
+        </v-col>
     </v-row>
   </section>
 </template>

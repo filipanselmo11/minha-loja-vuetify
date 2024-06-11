@@ -56,5 +56,49 @@
             "preco": "R$ 29,10",
             "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
         }
+    ],
+    "descartaveis": [
+        {
+            "id": 1,
+            "nome": "Pano Multiuso",
+            "quantidade": 15,
+            "preco": "R$ 2,50",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 2,
+            "nome": "Saco de Lixo",
+            "quantidade": 24,
+            "preco": "R$ 3,50",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 3,
+            "nome": "Garrafinha de plástico",
+            "quantidade": 5,
+            "preco": "R$ 1,40",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 4,
+            "nome": "Sacola de 5kg",
+            "quantidade": 90,
+            "preco": "R$ 1,00",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 5,
+            "nome": "Papel Toalha",
+            "quantidade": 17,
+            "preco": "R$ 7,50",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 6,
+            "nome": "Porta Alimento",
+            "quantidade": 12,
+            "preco": "R$ 8,50",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        }
     ]
 }
