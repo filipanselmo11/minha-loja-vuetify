@@ -9,7 +9,7 @@ const links = [
 
 <template>
   <v-footer>
-    <v-row justify="center" no-gutter>
+    <v-row justify="center" no-gutters>
       <v-btn
         v-for="link in links"
         :key="link"

@@ -1,0 +1,60 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "nome": "Caixa de pizza",
+            "quantidade": 20,
+            "preco": "R$ 15,00",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 2,
+            "nome": "Lápis para escritório",
+            "quantidade": 10,
+            "preco": "R$ 1,00",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 3,
+            "nome": "Papel A4",
+            "quantidade": 12,
+            "preco": "R$ 11,00",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 4,
+            "nome": "Clipes para papel",
+            "quantidade": 9,
+            "preco": "R$ 15,00",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 5,
+            "nome": "Caneta bic",
+            "quantidade": 22,
+            "preco": "R$ 9,00",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 6,
+            "nome": "Amido de Milho",
+            "quantidade": 43,
+            "preco": "R$ 8,10",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 7,
+            "nome": "Açucar Refinado",
+            "quantidade": 4,
+            "preco": "R$ 4,10",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        },
+        {
+            "id": 8,
+            "nome": "Cadeira de bar",
+            "quantidade": 20,
+            "preco": "R$ 29,10",
+            "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
+        }
+    ]
+}
