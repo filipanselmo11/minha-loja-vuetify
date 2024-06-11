@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 const items = [
   { id: 1, titulo: 'Manaus-AM' },
   { id: 2, titulo: 'Parintins-AM' },
@@ -20,6 +21,13 @@ const onClick = () => {
 
 const goCarrrinho = () => {
   console.log('Ir para página de carrinho de compras');
+}
+
+
+const router = useRouter();
+
+const goLogin = () => {
+  router.push('/login');
 }
 
 </script>
@@ -44,7 +52,7 @@ const goCarrrinho = () => {
     <v-spacer></v-spacer>
     <div class="d-flex justify-end pa-6">
       <v-btn-toggle rounded="xl">
-        <v-btn>Entrar</v-btn>
+        <v-btn @click="goLogin">Entrar</v-btn>
         <v-btn>Cadastrar</v-btn>
         <v-btn>Área do Representante</v-btn>
       </v-btn-toggle>
