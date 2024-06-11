@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import ButtonComponent from './ButtonComponent.vue';
 import TextComponent from './TextComponent.vue';
 </script>
 
@@ -23,6 +24,11 @@ import TextComponent from './TextComponent.vue';
               placeholder="****"
               type="password"
             />
+          </v-col>
+          <v-col cols="12">
+            <ButtonComponent
+              textButton="Entrar"
+              size="large"/>
           </v-col>
         </v-row>
       </v-container>
