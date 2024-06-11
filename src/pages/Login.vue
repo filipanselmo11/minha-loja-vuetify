@@ -17,9 +17,14 @@ const items = [
 </script>
 
 <template>
-  <BreadCumbComponent :items="items" />
+  <div class="d-flex justify-start">
+    <BreadCumbComponent :items="items" />
+  </div>
+  <!-- <div class="d-flex justify-end mr-3 mb-3">
+    <v-btn>Voltar</v-btn>
+  </div> -->
   <section id="login">
-    <LoginForm/>
+    <LoginForm />
   </section>
   <section id="primeiro-acesso"></section>
 </template>

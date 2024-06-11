@@ -30,6 +30,10 @@ const goLogin = () => {
   router.push('/login');
 }
 
+const goHome = () => {
+  router.go(-1);
+}
+
 </script>
 <template>
   <v-app-bar height="60" :elevation="2" rounded density="compact">
@@ -60,7 +64,9 @@ const goLogin = () => {
   </v-app-bar>
   <div>
     <v-app-bar :elevation="2" rounded>
-      <v-app-bar-title class="pa-4">Minha Loja</v-app-bar-title>
+      <v-app-bar-title>
+        <v-btn @click="goHome" variant="text">Minha Loja</v-btn>
+      </v-app-bar-title>
       <v-btn @click="goCarrrinho" icon="mdi mdi-cart-outline"></v-btn>
         <v-text-field
         class="pa-4 mr-8"

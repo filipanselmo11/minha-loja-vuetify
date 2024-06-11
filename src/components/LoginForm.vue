@@ -25,10 +25,13 @@ import TextComponent from './TextComponent.vue';
               type="password"
             />
           </v-col>
-          <v-col cols="12">
+          <v-col cols="6">
             <ButtonComponent
               textButton="Entrar"
               size="large"/>
+          </v-col>
+          <v-col class="mt-2" cols="6">
+            <span>Esqueci minha senha</span>
           </v-col>
         </v-row>
       </v-container>
