@@ -2,6 +2,13 @@
 import ButtonComponent from './ButtonComponent.vue';
 import RadioButtonComponent from './RadioButtonComponent.vue';
 import TextComponent from './TextComponent.vue';
+
+defineProps<{
+  cpf: string,
+}>();
+
+defineEmits(['update:cpf', 'realizarCadastro']);
+
 </script>
 
 <template>
@@ -19,10 +26,19 @@ import TextComponent from './TextComponent.vue';
             <RadioButtonComponent/>
           </v-col>
           <v-col cols="12">
-            <TextComponent label="Cpf/CNPJ" placeholder="Digite seu cpf ou cnpj" type="text" />
+            <TextComponent
+              :model-value="cpf"
+              label="Cpf/CNPJ"
+              placeholder="Digite seu cpf ou cnpj"
+              type="text"
+              @update:model-value="$emit('update:cpf', $event)"/>
           </v-col>
           <v-col class="mt-5" cols="12">
-            <ButtonComponent textButton="Avançar" size="large" />
+            <ButtonComponent
+              @click-event="$emit('realizarCadastro', $event)"
+              textButton="Avançar"
+              size="large"
+            />
           </v-col>
         </v-row>
       </v-container>

@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 import ButtonComponent from './ButtonComponent.vue';
 import TextComponent from './TextComponent.vue';
+defineProps<{
+  email: string,
+  senha: string
+}>();
+
+defineEmits(['update:email', 'update:senha', 'realizarLogin']);
 </script>
 
 <template>
@@ -13,20 +19,25 @@ import TextComponent from './TextComponent.vue';
         <v-row>
           <v-col cols="12">
             <TextComponent
+              :model-value="email"
               label="Email"
               placeholder="fulano@email.com"
               type="email"
+              @update:model-value="$emit('update:email', $event)"
             />
           </v-col>
           <v-col cols="12">
             <TextComponent
+              :model-value="senha"
               label="Senha"
               placeholder="****"
               type="password"
+              @update:model-value="$emit('update:senha', $event)"
             />
           </v-col>
           <v-col cols="6">
             <ButtonComponent
+              @click-event="$emit('realizarLogin', $event)"
               textButton="Entrar"
               size="large"/>
           </v-col>

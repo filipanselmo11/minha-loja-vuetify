@@ -1,9 +1,14 @@
 <script lang="ts" setup>
-const textProps = defineProps<{
+defineProps<{
   label: string,
   placeholder: string,
-  type: string
+  type: string,
+  modelValue: any
 }>();
+
+defineEmits(['update:modelValue']);
+
+// const modelValue = defineModel('')
 </script>
 
 <template>
@@ -11,10 +16,12 @@ const textProps = defineProps<{
     class="mx-auto"
     max-width="344">
       <v-text-field
+        :model-value="modelValue"
         hide-details
-        :label="textProps.label"
-        :placeholder="textProps.placeholder"
-        :type="textProps.type"
+        :label="label"
+        :placeholder="placeholder"
+        :type="type"
+        @update:model-value="$emit('update:modelValue', $event)"
         ></v-text-field>
     </v-responsive>
 </template>

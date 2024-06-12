@@ -1,16 +1,19 @@
 <script lang="ts" setup>
-const buttonProps = defineProps<{
+defineProps<{
   textButton: string,
   size: string
 }>();
+
+defineEmits(['clickEvent'])
+
 </script>
 
 <template>
   <v-responsive
     class="mx-auto"
     max-width="344">
-      <v-btn :size="buttonProps.size">
-        {{ buttonProps.textButton }}
+      <v-btn @click="$emit('clickEvent', $event)" :size="size">
+        {{ textButton }}
       </v-btn>
     </v-responsive>
 </template>
