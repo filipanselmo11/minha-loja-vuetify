@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps<{
-  radios: String
+  radios: any
 }>();
 
 defineEmits(['update:radios']);

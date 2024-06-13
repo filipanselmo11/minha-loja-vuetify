@@ -5,7 +5,7 @@ import TextComponent from './TextComponent.vue';
 
 defineProps<{
   field: string,
-  radios: any | 'fisica'
+  radios: any
 }>();
 
 defineEmits(['update:field', 'realizarCadastro', 'update:radios']);
