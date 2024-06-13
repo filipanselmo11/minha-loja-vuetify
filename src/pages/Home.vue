@@ -6,6 +6,7 @@ import MenuComponent from '../components/MenuComponent.vue';
 import CarrosselComponent from '../components/CarrosselComponent.vue';
 import CardComponent from '../components/CardComponent.vue';
 import LoadComponent from '../components/LoadComponent.vue';
+import NavbarComponent from '@/components/NavbarComponent.vue';
 
 const friosList = [
   { id: 1, titulo: 'Ave' },
@@ -64,6 +65,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <NavbarComponent/>
   <section id="opcoes" class="d-flex pa-2 mt-2.5">
     <div class="mr-2">
       <MenuComponent text-btn="Frios" :options-list="friosList" />

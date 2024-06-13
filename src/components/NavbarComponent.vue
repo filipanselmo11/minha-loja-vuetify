@@ -30,6 +30,10 @@ const goLogin = () => {
   router.push('/login');
 }
 
+const goCadastro = () => {
+  router.push('/cadastro');
+}
+
 const goHome = () => {
   router.go(-1);
 }
@@ -57,7 +61,7 @@ const goHome = () => {
     <div class="d-flex justify-end pa-6">
       <v-btn-toggle rounded="xl">
         <v-btn @click="goLogin">Entrar</v-btn>
-        <v-btn>Cadastrar</v-btn>
+        <v-btn @click="goCadastro">Cadastrar</v-btn>
         <v-btn>Área do Representante</v-btn>
       </v-btn-toggle>
     </div>
