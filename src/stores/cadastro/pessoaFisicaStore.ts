@@ -25,11 +25,12 @@ export const usePessoaFisicaStore = defineStore('pessoaFisicaStore', {
         'senha': pessoa.senha,
         'rg': pessoa.rg
       };
-      await api.post('/pessoas', body, { headers: {'Access-Control-Allow-Origin': '*'}}).then(res => {
+      await api.post('/pessoas', body).then(res => {
         console.log(res.data)
       }).catch(error => {
         console.log(error)
       });
+      this.loading = false;
     }
   },
 });

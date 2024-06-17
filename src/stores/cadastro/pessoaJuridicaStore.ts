@@ -33,11 +33,15 @@ export const usePessoaJuridicaStore = defineStore('pessoaJuridicaStore', {
         'estado': empresa.estado,
         'numero': empresa.numero
       };
-
-      await api.post('/empresas', body, { headers: {'Access-Control-Allow-Origin': '*'}}).then(res => {
+      await api.post('/empresas', body).then(res => {
         console.log(res.data);
-      }).catch(err => console.log(err));
+      }).catch(error => console.log(error));
       this.loading = false;
+
+      // await api.post('/empresas', body, { headers: {'Access-Control-Allow-Origin': '*'}}).then(res => {
+      //   console.log(res.data);
+      // }).catch(err => console.log(err));
+      // this.loading = false;
     }
   }
 });
