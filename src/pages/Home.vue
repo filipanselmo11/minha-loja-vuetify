@@ -7,6 +7,7 @@ import CarrosselComponent from '../components/CarrosselComponent.vue';
 import CardComponent from '../components/CardComponent.vue';
 import LoadComponent from '../components/LoadComponent.vue';
 import NavbarComponent from '@/components/NavbarComponent.vue';
+import { useRootStore } from '@/stores/RootStore';
 
 const friosList = [
   { id: 1, titulo: 'Ave' },
@@ -56,10 +57,12 @@ const slides = [
 
 const prodStore = useProdStore();
 const descStore = useDescStore();
+const rootStore = useRootStore();
 
 onMounted(() => {
   prodStore.getProds();
   descStore.getDescs();
+  rootStore.getRoot();
 });
 
 </script>

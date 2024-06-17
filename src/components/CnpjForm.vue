@@ -4,8 +4,7 @@ import TextComponent from './TextComponent.vue';
 
 defineProps<{
   cnpj: String,
-  nomeFantasia: String,
-  razaoSocial: String,
+  nomeEmpresa: String,
   emailEmpresa: String,
   senhaEmpresa: String,
   telefoneEmpresa: String,
@@ -18,8 +17,7 @@ defineProps<{
 
 defineEmits([
   'update:cnpj',
-  'update:nomeFantasia',
-  'update:razaoSocial',
+  'update:nomeEmpresa',
   'update:emailEmpresa',
   'update:senhaEmpresa',
   'update:telefoneEmpresa',
@@ -48,11 +46,11 @@ defineEmits([
             </v-col>
             <v-col cols="6">
               <TextComponent
-                :model-value="nomeFantasia"
+                :model-value="nomeEmpresa"
                 label="Nome Fantasia"
                 placeholder="Digite o nome fantasia da empresa"
                 type="text"
-                @update:model-value="$emit('update:nomeFantasia', $event)" />
+                @update:model-value="$emit('update:nomeEmpresa', $event)" />
             </v-col>
             <v-col cols="6">
               <TextComponent

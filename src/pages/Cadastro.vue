@@ -3,8 +3,11 @@ import BreadCumbComponent from '@/components/BreadCumbComponent.vue';
 import CnpjForm from '@/components/CnpjForm.vue';
 import CpfForm from '@/components/CpfForm.vue';
 import RadioButtonComponent from '@/components/RadioButtonComponent.vue';
+import { PessoaFisicaInterface, usePessoaFisicaStore } from '@/stores/cadastro/pessoaFisicaStore';
+import { PessoaJuridicaInterface, usePessoaJuridicaStore } from '@/stores/cadastro/pessoaJuridicaStore';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
 const items = [
   {
     title: 'Home',
@@ -21,47 +24,88 @@ const items = [
 
 const radios = ref('fisica');
 
-const nome = ref('');
-const cpf = ref('');
-const email = ref('');
-const rg = ref('');
-const senha = ref('');
-const telefone = ref('');
-const cnpj = ref('');
-const nomeFantasia = ref('');
-const razaoSocial = ref('');
-const emailEmpresa = ref('');
-const senhaEmpresa = ref('');
-const telefoneEmpresa = ref('');
-const cep = ref('');
-const endereco = ref('');
-const cidade = ref('');
-const estado = ref('');
-const numero = ref(0);
+const pessoaFisicaRefs = {
+  nome: ref(''),
+  cpf: ref(''),
+  email: ref(''),
+  rg: ref(''),
+  senha: ref(''),
+  telefone: ref('')
+};
 
+const pessoaJuridicaRefs = {
+  cnpj: ref(''),
+  nomeEmpresa: ref(''),
+  emailEmpresa: ref(''),
+  senhaEmpresa: ref(''),
+  telefoneEmpresa: ref(''),
+  cep: ref(''),
+  endereco: ref(''),
+  cidade: ref(''),
+  estado: ref(''),
+  numero: ref(0)
+};
 
 const router = useRouter();
 
-const goLogin = () => {
-  const dados = {
-    'nome': nome.value,
-    'cpf': cpf.value,
-    'email': email.value,
-    'rg': rg.value,
-    'senha': senha.value,
-    'telefone': telefone.value,
-    'cnpj': cnpj.value,
-    'nome fantasia': nomeFantasia.value,
-    'razao social': razaoSocial.value,
-    'email empresa': emailEmpresa.value,
-    'telefone da empresa': telefoneEmpresa.value,
-    'cep': cep.value,
-    'estado': estado.value,
-    'numero': numero.value
-  };
+const pessoaFisicaStore = usePessoaFisicaStore();
+
+const pessoaJuridicaStore = usePessoaJuridicaStore();
+
+const pessoaFisicaObj = ref<PessoaFisicaInterface>({
+  nome: pessoaFisicaRefs.nome.value,
+  cpf: pessoaFisicaRefs.cpf.value,
+  email: pessoaFisicaRefs.email.value,
+  telefone: pessoaFisicaRefs.telefone.value,
+  senha: pessoaFisicaRefs.senha.value,
+  rg: pessoaFisicaRefs.rg.value
+});
+
+const pessoaJuridicaObj = ref<PessoaJuridicaInterface>({
+  cnpj: pessoaJuridicaRefs.cnpj.value,
+  email: pessoaJuridicaRefs.emailEmpresa.value,
+  nome: pessoaJuridicaRefs.nomeEmpresa.value,
+  telefone: pessoaJuridicaRefs.telefoneEmpresa.value,
+  senha: pessoaJuridicaRefs.senhaEmpresa.value,
+  cep: pessoaJuridicaRefs.cep.value,
+  endereco: pessoaJuridicaRefs.endereco.value,
+  cidade:pessoaJuridicaRefs. cidade.value,
+  estado: pessoaJuridicaRefs.estado.value,
+  numero: pessoaJuridicaRefs.numero.value
+});
+// const pessoaFisicaObj = ref<PessoaFisicaInterface>({
+//   cpf: '',
+//   nome: '',
+//   email: '',
+//   telefone: '',
+//   senha: '',
+//   rg: ''
+// });
+
+// const pessoaJuridicaObj = ref<PessoaJuridicaInterface>({
+//   cnpj: '',
+//   email: '',
+//   nome: '',
+//   telefone: '',
+//   senha: '',
+//   cep: '',
+//   endereco: '',
+//   cidade: '',
+//   estado: '',
+//   numero: 0
+// });
+
+const goLoginFisico = () => {
+  pessoaFisicaStore.createPessoaFisica(pessoaFisicaObj.value);
   router.push('/login');
-  console.log('DADOS ', dados);
 }
+
+const goLoginJuridico = () => {
+  pessoaJuridicaStore.createPessoaJuridica(pessoaJuridicaObj.value);
+  router.push('/login');
+}
+
+
 
 </script>
 
@@ -76,28 +120,29 @@ const goLogin = () => {
   <v-row class="d-flex justify-space-around" no-gutters>
     <section v-if="radios === 'fisica'" id="cpf-form">
       <CpfForm
-        v-model:cpf="cpf"
-        v-model:nome="nome"
-        v-model:email="email"
-        v-model:rg="rg"
-        v-model:senha="senha"
-        v-model:telefone="telefone"
-        @go-login="goLogin"/>
+        v-model:cpf="pessoaFisicaRefs.cpf.value"
+        v-model:email="pessoaFisicaRefs.email.value"
+        v-model:nome="pessoaFisicaRefs.nome.value"
+        v-model:rg="pessoaFisicaRefs.rg.value"
+        v-model:senha="pessoaFisicaRefs.senha.value"
+        v-model:telefone="pessoaFisicaRefs.telefone.value"
+        @go-login="goLoginFisico"
+      />
     </section>
     <section v-else id="cnpj-form">
       <CnpjForm
-        v-model:cnpj="cnpj"
-        v-model:nome-fantasia="nomeFantasia"
-        v-model:razao-social="razaoSocial"
-        v-model:email-empresa="emailEmpresa"
-        v-model:senha-empresa="senhaEmpresa"
-        v-model:telefone-empresa="telefoneEmpresa"
-        v-model:cep="cep"
-        v-model:endereco="endereco"
-        v-model:cidade="cidade"
-        v-model:estado="estado"
-        v-model:numero="numero"
-        @go-login="goLogin"/>
+        v-model:cep="pessoaJuridicaRefs.cep.value"
+        v-model:cidade="pessoaJuridicaRefs.cidade.value"
+        v-model:cnpj="pessoaJuridicaRefs.cnpj.value"
+        v-model:email-empresa="pessoaJuridicaRefs.emailEmpresa.value"
+        v-model:endereco="pessoaJuridicaRefs.endereco.value"
+        v-model:estado="pessoaJuridicaRefs.estado.value"
+        v-model:nome-empresa="pessoaJuridicaRefs.nomeEmpresa.value"
+        v-model:numero="pessoaJuridicaRefs.numero.value"
+        v-model:senha-empresa="pessoaJuridicaRefs.senhaEmpresa.value"
+        v-model:telefone-empresa="pessoaJuridicaRefs.telefoneEmpresa.value"
+        @go-login="goLoginJuridico"
+      />
     </section>
   </v-row>
 </template>
