@@ -34,7 +34,7 @@ export const usePessoaJuridicaStore = defineStore('pessoaJuridicaStore', {
         'numero': empresa.numero
       };
 
-      await api.post('/empresas', body).then(res => {
+      await api.post('/empresas', body, { headers: {'Access-Control-Allow-Origin': '*'}}).then(res => {
         console.log(res.data);
       }).catch(err => console.log(err));
       this.loading = false;
