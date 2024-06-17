@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: "http://127.0.0.1:8000",
   headers: {
-    'Authorization': '*',
-    'Content-Type': 'application/json'
-  }
+    'Accepts': 'application/json',
+    'Access-Control-Allow-Origins': '*'
+  },
+  baseURL: "http://127.0.0.1:8000",
 });
