@@ -9,7 +9,12 @@ defineEmits(['openDialog', 'closeDialog', 'update:dialog']);
 
 <template>
   <v-btn @click="$emit('openDialog', $event)">Comprar</v-btn>
-  <v-dialog persistent width="auto" :model-value="dialog" @update:model-value="$emit('update:dialog', $event)">
+  <v-dialog
+    persistent
+    width="auto"
+    :model-value="dialog"
+    @update:model-value="$emit('update:dialog', $event)"
+    style="opacity: 0.4 !important;">
     <v-card max-width="400">
       <v-img height="200px" :src="image" cover />
       <v-card-title>
@@ -19,7 +24,7 @@ defineEmits(['openDialog', 'closeDialog', 'update:dialog']);
         <h1>Form de compra</h1>
       </v-card-item>
       <template v-slot:actions>
-        <v-btn @click="$emit('closeDialog', $event)" class="ms-auto" text="Fechar">
+        <v-btn @click="$emit('closeDialog', $event)" class="ms-auto" text="Adicionar">
         </v-btn>
       </template>
     </v-card>

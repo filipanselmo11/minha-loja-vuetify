@@ -100,5 +100,47 @@
             "preco": "R$ 8,50",
             "image": "https://img.freepik.com/fotos-gratis/entregador-de-pizza-segurando-caixas-close-up_23-2148418991.jpg?w=1060&t=st=1718120725~exp=1718121325~hmac=1c34456a55d7694c172107b2189f49aaec9cc2af4fd75443660b763b1a73471e"
         }
+    ],
+    "aves": [
+        {
+            "id": 1,
+            "nome": "Coxinha de Asa",
+            "codigo": 889012,
+            "embalagem": "UN/1",
+            "preco": "R$ 20,00",
+            "image": "https://img.freepik.com/fotos-gratis/visao-aerea-do-delicioso-frango-grelhado-em-papel-pardo-com-molho-de-tomate-sobre-a-mesa-de-madeira_23-2148029671.jpg?t=st=1718746100~exp=1718749700~hmac=1a84f94e8fa446a3b3d86afed262b229f6b1efb7d43558d4a75699e9d9676544&w=1060"
+        },
+        {
+            "id": 1,
+            "nome": "Coxinha de Asa",
+            "codigo": 889012,
+            "embalagem": "UN/1",
+            "preco": "R$ 20,00",
+            "image": "https://img.freepik.com/fotos-gratis/visao-aerea-do-delicioso-frango-grelhado-em-papel-pardo-com-molho-de-tomate-sobre-a-mesa-de-madeira_23-2148029671.jpg?t=st=1718746100~exp=1718749700~hmac=1a84f94e8fa446a3b3d86afed262b229f6b1efb7d43558d4a75699e9d9676544&w=1060"
+        },
+        {
+            "id": 2,
+            "nome": "Coxinha de Asa",
+            "codigo": 889011,
+            "embalagem": "UN/1",
+            "preco": "R$ 20,00",
+            "image": "https://img.freepik.com/fotos-gratis/visao-aerea-do-delicioso-frango-grelhado-em-papel-pardo-com-molho-de-tomate-sobre-a-mesa-de-madeira_23-2148029671.jpg?t=st=1718746100~exp=1718749700~hmac=1a84f94e8fa446a3b3d86afed262b229f6b1efb7d43558d4a75699e9d9676544&w=1060"
+        },
+        {
+            "id": 3,
+            "nome": "Coxinha de Asa",
+            "codigo": 1232323,
+            "embalagem": "UN/1",
+            "preco": "R$ 10,00",
+            "image": "https://img.freepik.com/fotos-gratis/visao-aerea-do-delicioso-frango-grelhado-em-papel-pardo-com-molho-de-tomate-sobre-a-mesa-de-madeira_23-2148029671.jpg?t=st=1718746100~exp=1718749700~hmac=1a84f94e8fa446a3b3d86afed262b229f6b1efb7d43558d4a75699e9d9676544&w=1060"
+        },
+        {
+            "id": 4,
+            "nome": "Filé de Sasami",
+            "codigo": 3213123,
+            "embalagem": "UN/2",
+            "preco": "R$ 21,00",
+            "image": "https://img.freepik.com/fotos-gratis/visao-aerea-do-delicioso-frango-grelhado-em-papel-pardo-com-molho-de-tomate-sobre-a-mesa-de-madeira_23-2148029671.jpg?t=st=1718746100~exp=1718749700~hmac=1a84f94e8fa446a3b3d86afed262b229f6b1efb7d43558d4a75699e9d9676544&w=1060"
+        }
     ]
 }

@@ -7,6 +7,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../pages/Home.vue';
+import Aves from '../pages/Frios/Aves.vue';
 import Login from '../pages/Login.vue';
 import Cadastro from '../pages/Cadastro.vue';
 
@@ -14,6 +15,10 @@ const routes = [
   {
     path: '',
     component: Home
+  },
+  {
+    path: '/frios/aves',
+    component: Aves
   },
   {
     path: '/login',

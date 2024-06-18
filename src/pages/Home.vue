@@ -1,21 +1,24 @@
 <script lang="ts" setup>
 import { useProdStore } from '@/stores/ProdStore';
-import { useDescStore } from '@/stores/DescStore';
+// import { useDescStore } from '@/stores/DescStore';
 import { onMounted, ref } from 'vue';
 import MenuComponent from '../components/MenuComponent.vue';
 import CarrosselComponent from '../components/CarrosselComponent.vue';
 import CardComponent from '../components/CardComponent.vue';
 import LoadComponent from '../components/LoadComponent.vue';
 import NavbarComponent from '@/components/NavbarComponent.vue';
+// import { useRouter } from 'vue-router';
 // import { useRootStore } from '@/stores/RootStore';
 
+// const router = useRouter();
+
 const friosList = [
-  { id: 1, titulo: 'Ave' },
-  { id: 2, titulo: 'Charque' },
-  { id: 3, titulo: 'Congelados' },
-  { id: 4, titulo: 'Frutas congeladas' },
-  { id: 5, titulo: 'Laticinios' },
-  { id: 6, titulo: 'Linguicas' },
+  { id: 1, titulo: 'Ave'},
+  { id: 2, titulo: 'Charque'},
+  { id: 3, titulo: 'Congelados', friosClick: () => console.log('Congelados Clicado')},
+  { id: 4, titulo: 'Frutas congeladas', friosClick: () => console.log('Frutas Congelados Clicado')},
+  { id: 5, titulo: 'Laticinios', friosClick: () => console.log('Laticinios Clicado')},
+  { id: 6, titulo: 'Linguicas', friosClick: () => console.log('Linguicas Clicado')},
 ];
 
 const limpezaList = [
@@ -66,12 +69,12 @@ const closeDialog = () => {
 }
 
 const prodStore = useProdStore();
-const descStore = useDescStore();
+// const descStore = useDescStore();
 // const rootStore = useRootStore();
 
 onMounted(() => {
   prodStore.getProds();
-  descStore.getDescs();
+  // descStore.getDescs();
   // rootStore.getRoot();
 });
 
@@ -81,7 +84,7 @@ onMounted(() => {
   <NavbarComponent/>
   <section id="opcoes" class="d-flex pa-2 mt-2.5">
     <div class="mr-2">
-      <MenuComponent text-btn="Frios" :options-list="friosList" />
+      <MenuComponent text-btn="Frios" :options-list="friosList"/>
     </div>
     <div class="mr-2">
       <MenuComponent text-btn="Limpeza" :options-list="limpezaList" />
@@ -122,34 +125,6 @@ onMounted(() => {
             @close-dialog="closeDialog"
           />
       </v-col>
-    </v-row>
-  </section>
-  <section id="descartaveis-embalagens" class="mt-4 text-center">
-    <span>
-      Descartáveis e Embalagens
-    </span>
-    <div v-if="descStore.loading">
-      <LoadComponent/>
-    </div>
-    <v-row
-      v-else
-      class="mt-2"
-      no-gutters>
-        <v-col
-          class="mt-3"
-          cols="3"
-          v-for="(item, id) in descStore.descartaveis"
-          :key="id">
-            <CardComponent
-              :nome="item.nome"
-              :image="item.image"
-              :preco="item.preco"
-              :quantidade="item.quantidade"
-              :dialog="dialog"
-              @open-dialog="openDialog"
-              @close-dialog="closeDialog"
-            />
-        </v-col>
     </v-row>
   </section>
 </template>
