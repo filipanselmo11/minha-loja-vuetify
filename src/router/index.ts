@@ -17,8 +17,13 @@ const routes = [
     component: Home
   },
   {
-    path: '/frios/aves',
-    component: Aves
+    path: '/frios',
+    children: [
+      {
+        path:'aves',
+        component: Aves
+      }
+    ]
   },
   {
     path: '/login',
