@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { useProdStore } from '@/stores/ProdStore';
 import { useDescStore } from '@/stores/DescStore';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import MenuComponent from '../components/MenuComponent.vue';
 import CarrosselComponent from '../components/CarrosselComponent.vue';
 import CardComponent from '../components/CardComponent.vue';
 import LoadComponent from '../components/LoadComponent.vue';
 import NavbarComponent from '@/components/NavbarComponent.vue';
-import { useRootStore } from '@/stores/RootStore';
+// import { useRootStore } from '@/stores/RootStore';
 
 const friosList = [
   { id: 1, titulo: 'Ave' },
@@ -55,14 +55,24 @@ const slides = [
   { id: 3, image: 'https://img.freepik.com/psd-gratuitas/banner-de-midia-social-semana-do-consumidor-com-20-de-desconto_621600-2.jpg?t=st=1718119638~exp=1718120238~hmac=3543f180571de554ae1a874a7de1361f0e8ca1771348c75a71d2752f83f843d8' },
 ];
 
+const dialog = ref(false);
+
+const openDialog = () => {
+  dialog.value = true;
+}
+
+const closeDialog = () => {
+  dialog.value = false;
+}
+
 const prodStore = useProdStore();
 const descStore = useDescStore();
-const rootStore = useRootStore();
+// const rootStore = useRootStore();
 
 onMounted(() => {
   prodStore.getProds();
   descStore.getDescs();
-  rootStore.getRoot();
+  // rootStore.getRoot();
 });
 
 </script>
@@ -107,6 +117,9 @@ onMounted(() => {
             :image="item.image"
             :preco="item.preco"
             :quantidade="item.quantidade"
+            :dialog="dialog"
+            @open-dialog="openDialog"
+            @close-dialog="closeDialog"
           />
       </v-col>
     </v-row>
@@ -132,6 +145,9 @@ onMounted(() => {
               :image="item.image"
               :preco="item.preco"
               :quantidade="item.quantidade"
+              :dialog="dialog"
+              @open-dialog="openDialog"
+              @close-dialog="closeDialog"
             />
         </v-col>
     </v-row>

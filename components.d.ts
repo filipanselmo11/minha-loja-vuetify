@@ -15,6 +15,7 @@ declare module 'vue' {
     CnpjForm: typeof import('./src/components/CnpjForm.vue')['default']
     CompactNavbarComponent: typeof import('./src/components/CompactNavbarComponent.vue')['default']
     CpfForm: typeof import('./src/components/CpfForm.vue')['default']
+    DialogComponent: typeof import('./src/components/DialogComponent.vue')['default']
     FieldComponent: typeof import('./src/components/FieldComponent.vue')['default']
     FooterComponent: typeof import('./src/components/FooterComponent.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']

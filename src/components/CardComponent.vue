@@ -1,10 +1,14 @@
 <script lang="ts" setup>
+import DialogComponent from '../components/DialogComponent.vue';
 const cardProps = defineProps<{
   image: string,
   nome: string,
   quantidade: number,
-  preco: string
+  preco: string,
+  dialog: boolean
 }>();
+
+defineEmits(['openDialog','closeDialog','update:dialog']);
 </script>
 
 <template>
@@ -20,7 +24,14 @@ const cardProps = defineProps<{
       {{ cardProps.preco }}
     </v-card-text>
     <div class="d-flex justify-center mb-2">
-      <v-btn>Comprar</v-btn>
+      <DialogComponent
+        :image="cardProps.image"
+        :nome="cardProps.nome"
+        :dialog="cardProps.dialog"
+        @update:dialog="$emit('update:dialog', $event)"
+        @open-dialog="$emit('openDialog', $event)"
+        @close-dialog="$emit('closeDialog', $event)"
+      />
     </div>
   </v-card>
 </template>
