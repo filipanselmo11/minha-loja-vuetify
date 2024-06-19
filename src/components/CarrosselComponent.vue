@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const props = defineProps<{
-  slides: object
+  slides: any
 }>();
 </script>
 

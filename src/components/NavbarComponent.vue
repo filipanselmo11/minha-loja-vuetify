@@ -1,6 +1,13 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
+defineProps<{
+  valueProd?: any,
+  loading?: boolean,
+}>();
+
+defineEmits(['goCarrinho', 'update:valueProd', 'onClick']);
+
 const items = [
   { id: 1, titulo: 'Manaus-AM' },
   { id: 2, titulo: 'Parintins-AM' },
@@ -8,20 +15,20 @@ const items = [
   { id: 4, titulo: 'Barcelos-AM' },
   { id: 5, titulo: 'São Gabriel da Cachoeira-AM' },
 ];
-const loading = ref(false);
-const loaded = ref(false);
+// const loading = ref(false);
+// const loaded = ref(false);
 
-const onClick = () => {
-  loading.value = true;
-  setTimeout(() => {
-    loading.value = false;
-    loaded.value = true;
-  }, 2000);
-}
+// const onClick = () => {
+//   loading.value = true;
+//   setTimeout(() => {
+//     loading.value = false;
+//     loaded.value = true;
+//   }, 2000);
+// }
 
-const goCarrrinho = () => {
-  console.log('Ir para página de carrinho de compras');
-}
+// const goCarrrinho = () => {
+//   console.log('Ir para página de carrinho de compras');
+// }
 
 
 const router = useRouter();
@@ -71,8 +78,9 @@ const goHome = () => {
       <v-app-bar-title>
         <v-btn @click="goHome" variant="text">Minha Loja</v-btn>
       </v-app-bar-title>
-      <v-btn @click="goCarrrinho" icon="mdi mdi-cart-outline"></v-btn>
+      <v-btn @click="$emit('goCarrinho', $event)" icon="mdi mdi-cart-outline"></v-btn>
         <v-text-field
+        :model-value="valueProd"
         class="pa-4 mr-8"
         max-width="400"
         :loading="loading"
@@ -82,7 +90,8 @@ const goHome = () => {
         variant="solo"
         hide-details
         single-line
-        @click:append-inner="onClick">
+        @click:append-inner="$emit('onClick', $event)"
+        @update:model-value="$emit('update:valueProd', $event)">
       </v-text-field>
     </v-app-bar>
   </div>

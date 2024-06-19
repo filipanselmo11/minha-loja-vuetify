@@ -12,7 +12,7 @@ const items = [
   {
     title: 'Home',
     disabled: false,
-    href: '',
+    href: '/',
     goHome: () => console.log('HOME')
   },
   {

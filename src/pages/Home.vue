@@ -7,10 +7,8 @@ import CarrosselComponent from '../components/CarrosselComponent.vue';
 import CardComponent from '../components/CardComponent.vue';
 import LoadComponent from '../components/LoadComponent.vue';
 import NavbarComponent from '@/components/NavbarComponent.vue';
-// import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 // import { useRootStore } from '@/stores/RootStore';
-
-// const router = useRouter();
 
 const friosList = [
   { id: 1, titulo: 'Ave'},
@@ -56,9 +54,14 @@ const slides = [
   { id: 1, image: 'https://img.freepik.com/vetores-gratis/modelo-de-banner-de-venda-horizontal_23-2148897327.jpg?w=1380&t=st=1718119450~exp=1718120050~hmac=34af233e7a1454be2b3a2679739b645168d1edb1189eae55dc6ee20ca668bded' },
   { id: 2, image: 'https://img.freepik.com/psd-gratuitas/modelo-de-banner-com-compras-online_23-2148545459.jpg?w=1380&t=st=1718119714~exp=1718120314~hmac=e77201ce64dd20c4c656e7805a06db152a36620e7038498aa8c03b6879517db5' },
   { id: 3, image: 'https://img.freepik.com/psd-gratuitas/banner-de-midia-social-semana-do-consumidor-com-20-de-desconto_621600-2.jpg?t=st=1718119638~exp=1718120238~hmac=3543f180571de554ae1a874a7de1361f0e8ca1771348c75a71d2752f83f843d8' },
+  { id: 4, image: 'https://img.freepik.com/vetores-gratis/modelo-de-banner-de-venda-horizontal_23-2148897329.jpg?w=1380&t=st=1718807269~exp=1718807869~hmac=e17168932fed08046137fc39ae5eea0b120f27b7ed4815e8af376701051ebc83' }
 ];
 
 const dialog = ref(false);
+const valueProd = ref('');
+const loading = ref(false);
+
+const router = useRouter();
 
 const openDialog = () => {
   dialog.value = true;
@@ -78,10 +81,22 @@ onMounted(() => {
   // rootStore.getRoot();
 });
 
+const onClick = () => {
+  console.log('CLICKED');
+}
+
+const goCarrinho = () => {
+  router.push('/meu-carrinho');
+}
 </script>
 
 <template>
-  <NavbarComponent/>
+  <NavbarComponent
+    :value-prod="valueProd"
+    :loading="loading"
+    @on-click="onClick"
+    @go-carrinho="goCarrinho"
+  />
   <section id="opcoes" class="d-flex pa-2 mt-2.5">
     <div class="mr-2">
       <MenuComponent text-btn="Frios" :options-list="friosList"/>

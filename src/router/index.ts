@@ -10,6 +10,7 @@ import Home from '../pages/Home.vue';
 import Aves from '../pages/Frios/Aves.vue';
 import Login from '../pages/Login.vue';
 import Cadastro from '../pages/Cadastro.vue';
+import Carrinho from '@/pages/Carrinho.vue';
 
 const routes = [
   {
@@ -32,6 +33,10 @@ const routes = [
   {
     path: '/cadastro',
     component: Cadastro
+  },
+  {
+    path: '/meu-carrinho',
+    component: Carrinho
   }
 ];
 

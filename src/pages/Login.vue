@@ -7,7 +7,7 @@ const items = [
   {
     title: 'Home',
     disabled: false,
-    href: '',
+    href: '/',
   },
   {
     title: 'Login',
